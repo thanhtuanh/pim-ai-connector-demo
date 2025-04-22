@@ -1,0 +1,161 @@
+databases:
+  - name: pim-ai-connector-db
+    databaseName: bookstore
+    user: admin
+    plan: free
+    ipAllowList: [] # Zugriff von allen Render-Services erlaubt
+
+services:
+  # Auth Service
+  - type: web
+    name: auth-service
+    env: docker
+    repo: https://github.com/thanhtuanh/pim-ai-connector-service.git
+    branch: main
+    dockerfilePath: ./auth-service/Dockerfile
+    dockerContext: ./auth-service
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: PORT
+        value: 8081
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: password
+      - key: MYBOOKSTORE_APP_JWTSECRET
+        generateValue: true
+      - key: MYBOOKSTORE_APP_JWTEXPIRATIONMS
+        value: 3600000
+      - key: MYBOOKSTORE_APP_REFRESHTOKENDURATIONMS
+        value: 86400000
+      - key: WEB_DOMAIN
+        value: onrender.com
+      - key: ENVIRONMENT
+        value: demo
+      - key: SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA
+        value: auth_service
+      - key: JWT_VALIDATION_ENABLED
+        value: true
+      - key: SPRING_CONTACT_NAME
+        value: DTNguyen
+      - key: SPRING_CONTACT_URL
+        value: https://github.com/thanhtuanh
+      - key: SPRING_CONTACT_EMAIL
+        value: n.thanh@gmx.de
+      - key: JAVA_OPTS
+        value: -Xmx512m -Xms256m
+
+  # Book Service
+  - type: web
+    name: book-service
+    env: docker
+    repo: https://github.com/thanhtuanh/pim-ai-connector-service.git
+    branch: main
+    dockerfilePath: ./book-service/Dockerfile
+    dockerContext: ./book-service
+    healthCheckPath: /actuator/health
+    dependsOn:
+      - auth-service
+    envVars:
+      - key: PORT
+        value: 8082
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: password
+      - key: WEB_DOMAIN
+        value: onrender.com
+      - key: ENVIRONMENT
+        value: demo
+      - key: JWT_VALIDATION_ENABLED
+        value: true
+      - key: SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA
+        value: book_service
+      - key: AUTH_SERVICE_URL
+        value: https://auth-service.onrender.com/auth
+      - key: MYBOOKSTORE_APP_JWTSECRET
+        fromService:
+          name: auth-service
+          type: web
+          envVarKey: MYBOOKSTORE_APP_JWTSECRET
+      - key: SPRING_CONTACT_NAME
+        value: DNguyen
+      - key: SPRING_CONTACT_URL
+        value: https://github.com/thanhtuanh
+      - key: SPRING_CONTACT_EMAIL
+        value: n.thanh@gmx.de
+      - key: JAVA_OPTS
+        value: -Xmx512m -Xms256m
+
+  # Product Intelligence Service
+  - type: web
+    name: product-intelligence-service
+    env: docker
+    repo: https://github.com/thanhtuanh/pim-ai-connector-service.git
+    branch: main
+    dockerfilePath: ./product-intelligence-service/Dockerfile
+    dockerContext: ./product-intelligence-service
+    healthCheckPath: /actuator/health
+    dependsOn:
+      - auth-service
+      - book-service
+    envVars:
+      - key: PORT
+        value: 8085
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: pim-ai-connector-db
+          property: password
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: WEB_DOMAIN
+        value: onrender.com
+      - key: ENVIRONMENT
+        value: demo
+      - key: SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA
+        value: product_intelligence
+      - key: AUTH_SERVICE_URL
+        value: https://auth-service.onrender.com/auth
+      - key: BOOK_SERVICE_URL
+        value: https://book-service.onrender.com/books
+      - key: MYBOOKSTORE_APP_JWTSECRET
+        fromService:
+          name: auth-service
+          type: web
+          envVarKey: MYBOOKSTORE_APP_JWTSECRET
+      - key: JWT_VALIDATION_ENABLED
+        value: true
+      - key: GCP_PROJECT_ID
+        value: pim-ai-prod
+      - key: SPRING_CONTACT_NAME
+        value: DNguyen
+      - key: SPRING_CONTACT_URL
+        value: https://github.com/thanhtuanh
+      - key: SPRING_CONTACT_EMAIL
+        value: n.thanh@gmx.de
+      - key: JAVA_OPTS
+        value: -Xmx512m -Xms256m

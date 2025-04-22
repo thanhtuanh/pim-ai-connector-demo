@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>PIM-AI-Connector – Intelligente Produktbeschreibungen für PIM & E-Commerce</title>
+    <meta name="description"
+        content="Der PIM-AI-Connector automatisiert Produktbeschreibungen mit KI – ideal für PIM-, DAM- und E-Commerce-Systeme. Schnell, präzise, individuell." />
+    <meta name="author" content="DNguyen" />
+    <meta name="keywords"
+        content="PIM, Produktinformationen, KI, E-Commerce, AI Product Description, DAM, OpenAI, Java, Microservices, Spring Boot" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" sizes="32x32" />
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Social Sharing (für zukünftige Seiten) -->
+    <meta property="og:title" content="PIM-AI-Connector" />
+    <meta property="og:description" content="KI-gestützte Produkttexte für PIM & E-Commerce." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/preview.jpg" />
+    <meta property="og:url" content="https://pim-ai-connector-demo.onrender.com" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            color: #d1dce5;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            border-left: 4px solid #3498db;
+            padding-left: 0.5rem;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-left: 5px solid #ffc107;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            padding: 2rem 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PIM-AI-Connector</h1>
+        <p>Automatisierte Produktbeschreibungen mit KI für PIM- & E-Commerce-Systeme</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>🔗 Live-Demo API-Endpunkt</h2>
+            <p>
+                Endpunkt für KI-basierte Produktbeschreibung:
+                <br>
+                <code id="endpoint-url"></code>
+            </p>
+            <div class="note">
+                <strong>Wichtig:</strong> Dieser Endpunkt ist ein <u>POST-Endpunkt</u> und <u>nicht direkt im Browser
+                    aufrufbar</u>.
+                Bitte verwende Swagger UI oder ein Tool wie <code>curl</code> oder Postman.
+            </div>
+        </section>
+
+        <section>
+            <h2>📄 Swagger API-Dokumentation</h2>
+            <p>
+                Automatisch generierte Übersicht aller REST-Endpunkte:
+                <br>
+                👉 <a id="swagger-link" href="#" target="_blank">Swagger UI ansehen</a>
+            </p>
+            <div class="note">
+                Du kannst die API direkt in Swagger testen – z. B. mit dem Beispiel "Der Herr der Ringe".
+            </div>
+        </section>
+
+        <section>
+            <h2>💻 Beispiel cURL Request</h2>
+            <pre id="curl-example"></pre>
+        </section>
+
+        <section>
+            <h2>📥 Beispiel-Antwort</h2>
+            <pre>{
+  "description": "Step into the enchanting world of Mittelerde...",
+  "model": "gpt-3.5-turbo-0125",
+  "promptTokens": 134,
+  "completionTokens": 300,
+  "totalTokens": 434
+}</pre>
+        </section>
+
+        <section>
+            <h2>📦 Tech-Stack</h2>
+            <ul>
+                <li>Java 21, Spring Boot 3</li>
+                <li>REST APIs, Microservices</li>
+                <li>OpenAI API Integration</li>
+                <li>Angular Frontend</li>
+                <li>Docker & docker-compose</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🚀 Geplante Erweiterungen</h2>
+            <ul>
+                <li>Texterkennung und Cover-Analyse mit Google Vision API</li>
+                <li>Automatische Kategorie-Zuordnung auf Basis von Bild + Inhalt</li>
+                <li>Produktdaten-Synchronisation mit PIM-Systemen</li>
+                <li>Multilinguale Beschreibungen (Deutsch, Englisch, Französisch)</li>
+                <li>Admin-Dashboard für Upload & KI-Training</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎯 Zielgruppen</h2>
+            <ul>
+                <li>PIM-/DAM-Systemanbieter</li>
+                <li>E-Commerce-Plattformen</li>
+                <li>Agenturen & Content-Teams</li>
+                <li>Proof-of-Concept für Bewerbungen</li>
+                <li>Investor- oder Partner-Präsentationen</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔒 Code & Kontakt</h2>
+            <p>
+                Dieses Projekt ist ein privates GitHub-Repo.<br>
+                👉 Bei Interesse bitte <a href="mailto:n.thanh@gmx.de">n.thanh@gmx.de kontaktieren</a>.
+            </p>
+            <p>
+                📁 <a href="https://github.com/thanhtuanh" target="_blank">Weitere Projekte auf GitHub</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 DNguyen – PIM-AI-Connector Demo. Alle Rechte vorbehalten.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+            const protocol = isLocal ? 'http' : 'https';
+            const port = isLocal ? ':8085' : '';
+            const baseUrl = `${protocol}://${location.hostname}${port}`;
+            const apiEndpoint = `${baseUrl}/api/intelligence/book-description`;
+
+            document.getElementById('swagger-link').href = `${baseUrl}/swagger-ui/index.html`;
+            document.getElementById('endpoint-url').textContent = apiEndpoint;
+            document.getElementById('curl-example').textContent = `curl --max-time 60 -X POST ${apiEndpoint} \\
+-H "Content-Type: application/json" \\
+-d '{\n  "title": "Der Herr der Ringe",\n  "author": "J.R.R. Tolkien",\n  "genre": "Fantasy",\n  "keywords": ["Mittelerde", "Hobbits", "Abenteuer"],\n  "pageCount": 1178,\n  "targetAudience": "Fantasy-Liebhaber"\n}'`;
+        });
+    </script>
+</body>
+
+</html>
