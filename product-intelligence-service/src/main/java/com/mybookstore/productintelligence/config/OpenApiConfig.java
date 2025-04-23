@@ -32,10 +32,18 @@ public class OpenApiConfig {
         @Bean
         public OpenAPI customOpenAPI() {
                 String protocol = webDomain.contains("localhost") ? "http" : "https";
+                // Port nur für lokale Entwicklung hinzufügen, nicht für Produktionsumgebung
+                String serverUrl = protocol + "://" + webDomain;
+
+                // Port nur für lokale Entwicklung hinzufügen
+                if (webDomain.contains("localhost") || webDomain.equals("127.0.0.1")) {
+                        serverUrl += ":" + serverPort;
+                }
+
                 return new OpenAPI()
                                 .servers(List.of(
                                                 new Server()
-                                                                .url(protocol + "://" + webDomain + ":" + serverPort)
+                                                                .url(serverUrl)
                                                                 .description(protocol.equals("https")
                                                                                 ? "Produktivsystem"
                                                                                 : "Lokale Entwicklung")))
