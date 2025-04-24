@@ -195,13 +195,24 @@
             <h2>📝 Intelligente Produktbeschreibung erstellen (sofort testen)</h2>
 
             <form id="description-form">
-                <input type="text" id="title" required value="Der Herr der Ringe" placeholder="Titel *" />
-                <input type="text" id="author" required value="J.R.R. Tolkien" placeholder="Autor *" />
-                <input type="text" id="genre" required value="Fantasy" placeholder="Genre *" />
-                <input type="text" id="keywords" required value="Mittelerde, Hobbits, Abenteuer"
-                    placeholder="Keywords *" />
-                <input type="number" id="pageCount" required value="1178" placeholder="Seitenanzahl *" />
-                <input type="text" id="targetAudience" required value="Fantasy-Liebhaber" placeholder="Zielgruppe *" />
+                <label for="title">Titel *</label>
+                <input type="text" id="title" name="title" required value="Der Herr der Ringe">
+            
+                <label for="author">Autor *</label>
+                <input type="text" id="author" name="author" required value="J.R.R. Tolkien">
+            
+                <label for="genre">Genre *</label>
+                <input type="text" id="genre" name="genre" required value="Fantasy">
+            
+                <label for="keywords">Keywords (durch Komma getrennt) *</label>
+                <input type="text" id="keywords" name="keywords" required value="Mittelerde, Hobbits, Abenteuer">
+            
+                <label for="pageCount">Seitenanzahl *</label>
+                <input type="number" id="pageCount" name="pageCount" required value="1178">
+            
+                <label for="targetAudience">Zielgruppe *</label>
+                <input type="text" id="targetAudience" name="targetAudience" required value="Fantasy-Liebhaber">
+            
                 <button type="submit">Senden</button>
             </form>
             <div id="result" style="margin-top: 2rem;">
