@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PIM-AI Connector – AI-Powered Product Content</title>
+    <meta name="description"
+        content="The PIM-AI Connector automatically generates high-quality, SEO-optimized product texts from structured data. Ideal for PIM, DAM, and e-commerce systems." />
+    <meta name="author" content="DNguyen" />
+    <meta name="keywords"
+        content="PIM, product information, AI, e-commerce, DAM, OpenAI, Java, Microservices, Spring Boot, product content, content automation" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header img {
+        max-width: 120px;
+        margin-bottom: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #d1dce5;
+            margin: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            border-left: 4px solid #3498db;
+            padding-left: 0.5rem;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-left: 5px solid #ffc107;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            padding: 2rem 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/assets/pim-ai-logo.png" alt="PIM AI Logo" />
+        <h1>PIM-AI Connector – AI-Powered Product Content</h1>
+        <p>Perfect for PIM, DAM, e-commerce platforms, and digital catalogs</p>
+        <div style="position: absolute; top: 1rem; right: 1rem;">
+            <a href="/index.html" style="color: #d1dce5; font-size: 0.9rem;">🇩🇪 DE</a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>🧠 How the PIM-AI Connector Works – From Data to Content</h2>
+            <p>
+                The <strong>PIM-AI Connector</strong> is an AI-powered middleware that processes structured product
+                data, existing descriptions, and product images to generate high-quality, marketing-ready
+                content.<br><br>
+                🔧 <strong>For Developers:</strong> Built on a microservice architecture using Spring Boot and REST
+                APIs, the Connector accepts JSON data and utilizes OpenAI. Optional: Google Vision image
+                analysis.<br><br>
+                🛍️ <strong>For Users & Clients:</strong> Simply submit your product information – the Connector
+                generates optimized descriptions, image suggestions, and content ready for webshops, PIM systems, or
+                catalogs.
+            </p>
+            <p style="margin-top: 1rem;">
+                📘 <strong>Example:</strong><br>
+                Provide the title <em>"The Lord of the Rings"</em>, author <em>"J.R.R. Tolkien"</em>, genre
+                <em>"Fantasy"</em>, and keywords.<br>
+                The connector then generates a persuasive product description – complete with target audience alignment
+                and SEO keywords.
+            </p>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <img src="/assets/pim-ai-overview-en.png" alt="PIM-AI Connector Overview"
+                    style="max-width: 300px; width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e0e0e0;" />
+                <p style="font-size: 0.9rem; color: #555;">🔁 From Data to Content – automated & intelligent</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔗 Live Demo API Endpoint</h2>
+            <p>API endpoint for product description generation:<br />
+                <code id="endpoint-url"></code>
+            </p>
+            <div class="note">
+                <strong>Note:</strong> This is a <u>POST endpoint</u> and cannot be opened directly in the browser. Use
+                Swagger UI, curl, or Postman.
+            </div>
+        </section>
+
+        <section>
+            <h2>📄 Swagger API Documentation</h2>
+            <p>👉 <a id="swagger-link" href="#" target="_blank">View in Swagger UI</a></p>
+        </section>
+
+        <section>
+            <h2>📦 Tech Stack</h2>
+            <ul>
+                <li>Java 21, Spring Boot 3</li>
+                <li>REST APIs, Microservices</li>
+                <li>OpenAI API Integration</li>
+                <li>Angular Frontend</li>
+                <li>Docker & docker-compose</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎯 Target Groups</h2>
+            <ul>
+                <li>PIM/DAM system providers</li>
+                <li>Online store operators</li>
+                <li>Content managers</li>
+                <li>E-commerce platforms – save time & costs on content creation</li>
+                <li>Content teams – instantly receive publish-ready descriptions</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔒 Code & Contact</h2>
+            <p>
+                The <strong>PIM-AI Connector</strong> is developed as a scalable microservice using Java, Spring Boot,
+                and Angular.<br>
+                This project is protected by copyright and offered under a private license.<br>
+                Commercial use, client projects, or system integrations are only allowed through a license or
+                cooperation agreement.<br><br>
+                👉 For license inquiries, technical details, or partnership proposals, contact:
+                <a href="mailto:n.thanh@gmx.de">n.thanh@gmx.de</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 DNguyen – PIM-AI Connector Demo<br>
+        <a href="/index.html">🇩🇪 German Version</a>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">
+            📄 This web demo is for demonstration and informational purposes only.<br>
+            Source code and content are copyrighted © 2025 DNguyen.<br>
+            Commercial use or redistribution without explicit permission is not allowed.
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+            const protocol = isLocal ? 'http' : 'https';
+            const port = isLocal ? ':8085' : '';
+            const baseUrl = `${protocol}://${location.hostname}${port}`;
+            const apiEndpoint = `${baseUrl}/api/intelligence/book-description`;
+
+            document.getElementById('swagger-link').href = `${baseUrl}/swagger-ui/index.html`;
+            document.getElementById('endpoint-url').textContent = apiEndpoint;
+        });
+    </script>
+</body>
+
+</html>

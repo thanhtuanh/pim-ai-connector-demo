@@ -4,30 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>PIM-AI-Connector – Intelligente Produktbeschreibungen für PIM & E-Commerce</title>
+    <title>PIM-AI-Connector – KI-basierte Texte für Produktdaten</title>
     <meta name="description"
-        content="Der PIM-AI-Connector automatisiert Produktbeschreibungen mit KI – ideal für PIM-, DAM- und E-Commerce-Systeme. Schnell, präzise, individuell." />
+        content="Der PIM-AI-Connector erstellt automatisch hochwertige, SEO-optimierte Produkttexte aus strukturierten Daten. Ideal für PIM, DAM und E-Commerce-Systeme." />
     <meta name="author" content="DNguyen" />
     <meta name="keywords"
-        content="PIM, Produktinformationen, KI, E-Commerce, AI Product Description, DAM, OpenAI, Java, Microservices, Spring Boot" />
-
+        content="PIM, Produktinformationen, KI, E-Commerce, DAM, OpenAI, Java, Microservices, Spring Boot, Produkttexte, Content Automation" />
     <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Social Sharing (für zukünftige Seiten) -->
-    <meta property="og:title" content="PIM-AI-Connector" />
-    <meta property="og:description" content="KI-gestützte Produkttexte für PIM & E-Commerce." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/preview.jpg" />
-    <meta property="og:url" content="https://pim-ai-connector-demo.onrender.com" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -40,13 +30,18 @@
         header {
             background: #2c3e50;
             color: white;
-            padding: 2rem 1rem;
+            padding: 1rem 1rem;
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
+        header img {
+            max-width: 120px;
+            margin-bottom: 0.5rem;
+        }
+
+         header h1 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
         }
 
         header p {
@@ -98,8 +93,30 @@
             font-size: 0.9rem;
         }
 
-        ul {
-            padding-left: 1.2rem;
+        input,
+        button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input:focus {
+            outline: 2px solid #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
         }
 
         footer {
@@ -113,17 +130,53 @@
 
 <body>
     <header>
-        <h1>PIM-AI-Connector</h1>
-        <p>Automatisierte Produktbeschreibungen mit KI für PIM- & E-Commerce-Systeme</p>
+        <img src="/assets/pim-ai-logo.png" alt="PIM AI Logo" />
+        <h1>PIM-AI-Connector – KI-basierte Texte für Produktdaten</h1>
+        <p>Ideal für PIM, DAM, Onlineshops und digitale Kataloge</p>
+
+        <div style="position: absolute; top: 1rem; right: 1rem;">
+        </div>
     </header>
+
 
     <main>
 
         <section>
-            <h2>🔗 Live-Demo API-Endpunkt</h2>
+            <h2>🧠 So funktioniert der PIM-AI Connector – Von Daten zu Inhalten</h2>
+
             <p>
-                Endpunkt für KI-basierte Produktbeschreibung:
-                <br>
+                Der <strong>PIM-AI Connector</strong> ist eine KI-gestützte Middleware, die strukturierte Produktdaten,
+                bestehende Beschreibungen und Produktbilder verarbeitet, analysiert und in hochwertige, marketingfertige Inhalte
+                umwandelt.<br><br>
+        
+                🔧 <strong>Für Entwickler:</strong> Der Connector basiert auf einer Microservice-Architektur (Spring Boot,
+                REST),
+                empfängt strukturierte JSON-Daten via API und verarbeitet diese mithilfe von OpenAI. Optional werden
+                Produktbilder mit Google Vision analysiert.<br><br>
+        
+                🛍️ <strong>Für Anwender und Kunden:</strong> Sie liefern einfach Ihre bestehenden Produktinformationen –
+                der PIM-AI Connector erstellt daraus automatisch optimierte Texte, Bildvorschläge und Inhalte für Ihren Webshop,
+                Ihr PIM-System oder Ihren Katalog.
+            </p>
+            <p style="margin-top: 1rem;">
+                📘 <strong>Beispiel:</strong><br>
+                Sie geben den Titel <em>„Der Herr der Ringe“</em>, den Autor <em>„J.R.R. Tolkien“</em>, das Genre <em>„Fantasy“</em>
+                und einige Schlagwörter an.<br>
+                Der PIM-AI Connector generiert daraus automatisch eine verkaufsstarke Produktbeschreibung – inklusive
+                Zielgruppenansprache und SEO-relevanter Begriffe.
+            </p>
+
+        
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <img src="/assets/pim-ai-overview.png" alt="PIM-AI Connector Funktionsweise"
+                    style="max-width: 300px; width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e0e0e0;" />
+                <p style="font-size: 0.9rem; color: #555;">🔁 Von Daten zu Inhalten – vollautomatisch & intelligent</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔗 Live-Demo API-Endpunkt</h2>
+            <p>Endpunkt für KI-basierte Produktbeschreibung:<br />
                 <code id="endpoint-url"></code>
             </p>
             <div class="note">
@@ -135,58 +188,31 @@
 
         <section>
             <h2>📄 Swagger API-Dokumentation</h2>
-            <p>
-                Automatisch generierte Übersicht aller REST-Endpunkte:
-                <br>
-                👉 <a id="swagger-link" href="#" target="_blank">Swagger UI ansehen</a>
-            </p>
-            <div class="note">
-                Du kannst die API direkt in Swagger testen – z. B. mit dem Beispiel "Der Herr der Ringe".
-            </div>
+            <p>👉 <a id="swagger-link" href="#" target="_blank">Swagger UI ansehen</a></p>
         </section>
 
         <section>
-            <h2>🧠 Wie funktioniert der PIM-AI Connector?</h2>
-            <p>
-                Der <strong>PIM-AI Connector</strong> nimmt strukturierte Produktdaten, Bilder und Beschreibungen auf
-                und erzeugt mit Hilfe von KI hochwertige, angereicherte Inhalte – ideal für Marketing, Shops oder
-                Kataloge.
-            </p>
+            <h2>📝 Intelligente Produktbeschreibung erstellen (sofort testen)</h2>
 
-            <div style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1.5rem;
-        ">
-                <img src="/assets/pim-ai-overview.jpg" alt="Funktionsweise des PIM-AI Connectors" style="
-                     max-width: 300px;
-                     width: 100%;
-                     height: auto;
-                     border-radius: 12px;
-                     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-                     border: 1px solid #e0e0e0;
-                     background: white;
-                 ">
+            <form id="description-form">
+                <input type="text" id="title" required value="Der Herr der Ringe" placeholder="Titel *" />
+                <input type="text" id="author" required value="J.R.R. Tolkien" placeholder="Autor *" />
+                <input type="text" id="genre" required value="Fantasy" placeholder="Genre *" />
+                <input type="text" id="keywords" required value="Mittelerde, Hobbits, Abenteuer"
+                    placeholder="Keywords *" />
+                <input type="number" id="pageCount" required value="1178" placeholder="Seitenanzahl *" />
+                <input type="text" id="targetAudience" required value="Fantasy-Liebhaber" placeholder="Zielgruppe *" />
+                <button type="submit">Senden</button>
+            </form>
+            <div id="result" style="margin-top: 2rem;">
+                <h3>🔍 Ergebnis:</h3>
+                <pre id="response-output">Noch keine Anfrage gesendet.</pre>
             </div>
         </section>
-
-
 
         <section>
             <h2>💻 Beispiel cURL Request</h2>
             <pre id="curl-example"></pre>
-        </section>
-
-        <section>
-            <h2>📥 Beispiel-Antwort</h2>
-            <pre>{
-  "description": "Step into the enchanting world of Mittelerde...",
-  "model": "gpt-3.5-turbo-0125",
-  "promptTokens": 134,
-  "completionTokens": 300,
-  "totalTokens": 434
-}</pre>
         </section>
 
         <section>
@@ -201,42 +227,43 @@
         </section>
 
         <section>
-            <h2>🚀 Geplante Erweiterungen</h2>
-            <ul>
-                <li>Texterkennung und Cover-Analyse mit Google Vision API</li>
-                <li>Automatische Kategorie-Zuordnung auf Basis von Bild + Inhalt</li>
-                <li>Produktdaten-Synchronisation mit PIM-Systemen</li>
-                <li>Multilinguale Beschreibungen (Deutsch, Englisch, Französisch)</li>
-                <li>Admin-Dashboard für Upload & KI-Training</li>
-            </ul>
-        </section>
-
-        <section>
             <h2>🎯 Zielgruppen</h2>
             <ul>
                 <li>PIM-/DAM-Systemanbieter</li>
-                <li>E-Commerce-Plattformen</li>
-                <li>Agenturen & Content-Teams</li>
-                <li>Proof-of-Concept für Bewerbungen</li>
-                <li>Investor- oder Partner-Präsentationen</li>
+                <li>Onlineshop-Betreiber</li>
+                <li>Content-Manager</li>
+                <li>E-Commerce-Plattformen – sparen Zeit & Kosten für Content-Erstellung</li>
+                <li>Content-Teams – erhalten sofort veröffentlichungsfertige Texte</li>
+
             </ul>
         </section>
-
         <section>
             <h2>🔒 Code & Kontakt</h2>
             <p>
-                Dieses Projekt ist ein privates GitHub-Repo.<br>
-                👉 Bei Interesse bitte <a href="mailto:n.thanh@gmx.de">n.thanh@gmx.de kontaktieren</a>.
-            </p>
-            <p>
-                📁 <a href="https://github.com/thanhtuanh" target="_blank">Weitere Projekte auf GitHub</a>
+                Der <strong>PIM-AI Connector</strong> wurde mit Java, Spring Boot und Angular als skalierbarer Microservice
+                entwickelt.<br>
+                Dieses Projekt ist urheberrechtlich geschützt und steht unter einer privaten Lizenz.<br>
+                Eine Nutzung in Kundenprojekten, kommerzielle Weiterverwendung oder Integration in PIM-/E-Commerce-Systeme ist
+                ausschließlich im Rahmen eines Lizenz- oder Kooperationsmodells möglich.<br><br>
+                👉 Bei Interesse an einer Lizenz, technischen Details oder einer Partnerschaft kontaktieren Sie uns bitte direkt
+                unter:
+                <a href="mailto:n.thanh@gmx.de">n.thanh@gmx.de</a>
             </p>
         </section>
+
     </main>
 
     <footer>
-        © 2025 DNguyen – PIM-AI-Connector Demo. Alle Rechte vorbehalten.
+        © 2025 DNguyen – PIM-AI Connector Demo<br>
+        <a href="/index-en.html">🇬🇧 English Version</a>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">
+            📄 Diese Web-Demo dient ausschließlich zu Demonstrations- und Informationszwecken.<br>
+            Der Quellcode und die Inhalte sind urheberrechtlich geschützt © 2025 DNguyen.<br>
+            Eine kommerzielle Nutzung oder Weiterverwendung ist ohne ausdrückliche Genehmigung nicht gestattet.
+        </p>
     </footer>
+
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -251,6 +278,35 @@
             document.getElementById('curl-example').textContent = `curl --max-time 60 -X POST ${apiEndpoint} \\
 -H "Content-Type: application/json" \\
 -d '{\n  "title": "Der Herr der Ringe",\n  "author": "J.R.R. Tolkien",\n  "genre": "Fantasy",\n  "keywords": ["Mittelerde", "Hobbits", "Abenteuer"],\n  "pageCount": 1178,\n  "targetAudience": "Fantasy-Liebhaber"\n}'`;
+
+            document.getElementById('description-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const payload = {
+                    title: document.getElementById('title').value,
+                    author: document.getElementById('author').value,
+                    genre: document.getElementById('genre').value,
+                    keywords: document.getElementById('keywords').value.split(',').map(k => k.trim()),
+                    pageCount: parseInt(document.getElementById('pageCount').value, 10),
+                    targetAudience: document.getElementById('targetAudience').value
+                };
+
+                const output = document.getElementById('response-output');
+                output.textContent = "⏳ Anfrage wird gesendet...";
+
+                fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                    .then(res => res.json().then(data => ({ status: res.status, body: data })))
+                    .then(result => {
+                        output.textContent = `✅ Status: ${result.status}\nAntwort:\n${JSON.stringify(result.body, null, 2)}`;
+                    })
+                    .catch(error => {
+                        output.textContent = `❌ Fehler: ${error}`;
+                    });
+            });
         });
     </script>
 </body>
