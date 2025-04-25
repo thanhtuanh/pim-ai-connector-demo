@@ -14,8 +14,10 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOriginPatterns("*") // Änderung hier: Verwende allowedOriginPatterns mit "*"
-                //.allowedOrigins(frontendUrl) // Verwende die spezifische URL statt Wildcard (testen mit http://localhost:4200 lokale Entwicklung)
+                .allowedOrigins(
+                        "http://localhost:4200",
+                        "https://frontend-w11g.onrender.com",
+                        "https://bookstore-frontend-w11g.onrender.com")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
