@@ -3,6 +3,7 @@
 **PIM-AI-Connector** ist eine moderne Microservice-Plattform, die auf dem Projekt [MyBookstore Microservices](https://github.com/thanhtuanh/mybookstore-microservices) basiert. Sie erweitert dieses um KI-gestützte Services zur Analyse, Anreicherung und Optimierung von Produktinformationen.
 
 🔗 **Live-Demo**: [pim-ai-connector-demo.onrender.com](https://pim-ai-connector-demo.onrender.com)
+🕐 *Hinweis: Da die Render.com-Domain im Free-Tier gehostet wird, kann der erste Ladevorgang einige Sekunden dauern.*
 
 ---
 
